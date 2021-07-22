@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+	int numeroAnimo = 0;
+	char nivelConfianza [5] ;
+	float multiplicadorConfianza = 0;
+	float fuerzaPsiquica = numeroAnimo*multiplicadorConfianza;
+
+	printf("Ingresar valor numero de animo entre 1 y 100 \n");
+	scanf ( "%i", &numeroAnimo );
+
+	while (numeroAnimo < 1 || numeroAnimo > 100 ) {
+		printf("el valor ingresado no es correcto \n");
+		printf("Ingrese un valor de animo entre 1 y 100 \n");
+		scanf ( "%i" , &numeroAnimo ); 
+	}
+
+
+	printf("Ingresar el nivel de confianza alta mediana o baja \n");
+			scanf ( "%s" , nivelConfianza );
+	while ((strcmp (nivelConfianza , "alta") != 0)
+	&& (strcmp (nivelConfianza , "mediana") != 0)
+	&& (strcmp (nivelConfianza , "baja") != 0)) {
+			printf("el valor ingresado no es correcto\n");
+			printf("ingrese un valor de confianza mediana, baja o alta\n");
+			scanf ("%s" , nivelConfianza);
+		}
+
+	if (strcmp (nivelConfianza , "alta" ) == 0) {
+		multiplicadorConfianza = 3.7;
+
+	} else if (strcmp (nivelConfianza , "mediana" ) == 0) {
+		multiplicadorConfianza = 1.3;
+
+	} else {
+		multiplicadorConfianza = 0.7;
+	}
+	
+	printf("%f\n", multiplicadorConfianza);
+	
+	if (fuerzaPsiquica < 65) {
+		printf("resultado desconocido desaparecieron en el enfrentamiento Eleven y Demogorgon\n");
+
+	} else if (fuerzaPsiquica >= 65 && fuerzaPsiquica < 233) {
+		printf(" resultado postivo ELeven logro contar con la fuerza justa pero se encuentra debil\n");
+
+
+	} else {
+
+	printf(" resultado postivo ELeven logro vencer a demogorgon completamente\n");
+		
+	}
+
+	return 0;
+}
